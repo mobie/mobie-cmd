@@ -15,15 +15,10 @@ entry_points={
 }
 
 name = 'mobie'
-here = os.path.abspath(os.path.dirname(__file__))
-version_info = {}
-with open(os.path.join(here, name, 'version.py')) as fp:
-    exec(fp.read(), version_info)
-version = version_info['_mobie_version']
 
 setup(
     name=name,
-    version=version.python_version(),
+    version="3.0.9",
     author='Christian Tischer',
     author_email='christian.tischer@embl.de',
     maintainer="Christian Tischer",
