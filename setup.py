@@ -1,6 +1,5 @@
 from setuptools import setup
 from distutils.command.build_py import build_py
-
 import os
 
 install_requires=[
@@ -14,11 +13,11 @@ entry_points={
     ]
 }
 
-name = 'mobie'
+version = '3.0.9'
 
 setup(
-    name=name,
-    version="3.0.9",
+    name='mobie',
+    version=version,
     author='Christian Tischer',
     author_email='christian.tischer@embl.de',
     maintainer="Christian Tischer",

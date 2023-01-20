@@ -1,1 +1,24 @@
-Command line launcher for Paintera: https://github.com/saalfeldlab/paintera
+## Development
+
+### Install mamba
+
+Download mamba-forge
+
+### Manage pypi packages
+
+- https://pypi.org/
+
+### Create mobie-dev env
+
+```
+mamba create -y -n mobie-dev -c conda-forge openjdk=8 jgo pip
+```
+
+### Run from source
+
+```
+mamba activate mobie-dev
+pip install -e .
+mobie --help
+```
+
