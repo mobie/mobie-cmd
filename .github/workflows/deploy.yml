@@ -1,0 +1,20 @@
+name: deploy
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: install build dependencies
+        run: |
+          pip install wheel setuptools
+      - name: build source distribution
+        run: |
+          python setup.py sdist
+#      - name: Publish package
+#        uses: pypa/gh-action-pypi-publish@release/v1
+#        with:
+#          password: ${{ secrets.PYPI_API_TOKEN }}

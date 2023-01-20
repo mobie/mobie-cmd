@@ -11,7 +11,7 @@ _picocli_autocomplete    = 'picocli.AutoComplete'
 _mobie_main_class        = 'org.embl.mobie.cmd.MoBIECommandLineInterface'
 _groupId                 = 'org.embl.mobie'
 _artifactId              = 'mobie-viewer-fiji'
-_artifactVersion         = version(mobie)
+_artifactVersion         = version("mobie")
 
 def launch_mobie():
     return jgo.util.main_from_endpoint(
