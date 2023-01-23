@@ -8,7 +8,7 @@ from importlib.metadata import version
 
 
 _picocli_autocomplete    = 'picocli.AutoComplete'
-_mobie_main_class        = 'org.embl.mobie.cmd.MoBIECommandLineInterface'
+_mobie_main_class        = 'org.embl.mobie.cmd.MoBIECmd'
 _groupId                 = 'org.embl.mobie'
 _artifactId              = 'mobie-viewer-fiji'
 _artifactVersion         = version("mobie")
