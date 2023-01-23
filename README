@@ -35,6 +35,12 @@ git add .; git commit -m "prepare for release"; git push
 
 Go to `setup.py` and change the `version` to `3.0.10`
 
+```
+git add setup.py
+git commit -m "Version bump 3.0.10'
+```
+
+
 ##### test locally
 
 ```
