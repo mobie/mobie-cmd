@@ -58,3 +58,13 @@ git tag 3.0.10
 git push --tags
 ```
 
+
+#### Troubleshooting
+
+Remove a tag (remote and local):
+
+```
+git push origin --delete 3.0.10
+git tag -d 3.0.10
+```
+
