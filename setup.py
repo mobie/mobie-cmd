@@ -13,7 +13,7 @@ entry_points={
     ]
 }
 
-version = '3.0.11'
+version = '3.0.12'
 
 classifiers=[
     'License :: OSI Approved :: BSD License',
