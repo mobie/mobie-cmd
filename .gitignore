@@ -104,8 +104,11 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# intellij
+# intellij / pycharm
 *.iml
+.idea/*
 
 # jenv
 .java-version
+
+

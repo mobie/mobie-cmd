@@ -11,20 +11,35 @@ Download mamba-forge
 ### Create mobie-dev env
 
 ```
-mamba create -y -n mobie-dev -c conda-forge openjdk=8 jgo pip
+mamba create -y -n mobie-dev -c conda-forge openjdk=8 jgo pip maven
 ```
+
+### Test with local MoBIE build
+
+1. mvn install current version (could be a SNAPSHOT)
+2. hardcode this version in `__init__.py`: e.g., 
+   `_artifactVersion         = '3.2.0-SNAPSHOT' #version("mobie")` 
+   
+continue as in [test locally](#test-locally)
 
 ### Release a new version
 
-Example for version `3.0.10`:
+This is not needed for local testing.
+
+Example for version `3.0.11`:
 
 #### mobie-viewer-fiji repo
+
+Within the mobie Java code change the version here:
+```java
+@CommandLine.Command(name = "mobie", mixinStandardHelpOptions = true, version = "3.0.11", description = "Visualise multi-modal big image data, see https://mobie.github.io/")
+```
 
 Use the below lines to make a maven release:
 
 ```
 mamba activate mobie-dev # this activates java 8!
-./install.sh 3.0.10-SNAPSHOT # test the line of code suggested by the script!
+./install.sh  # test the line of code suggested by the script!
 git add .; git commit -m "prepare for release"; git push
 ../scijava-scripts/release-version.sh --skip-version-check --skip-license-update
 # if successful this will say
@@ -37,7 +52,7 @@ Go to `setup.py` and change the `version` to `3.0.10`
 
 ```
 git add setup.py
-git commit -m "Version bump 3.0.10'
+git commit -m "Version bump 3.0.10"
 ```
 
 
