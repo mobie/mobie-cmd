@@ -14,7 +14,13 @@ Download mamba-forge
 mamba create -y -n mobie-dev -c conda-forge openjdk=8 jgo pip maven
 ```
 
-### Test with local MoBIE build
+### Test within Java on the command line
+
+1. cd to the main folder of mobie-viewer-fiji
+2. ./install.sh
+3. ./mobie-files -r "/Users/tischer/Documents/mobie/src/test/resources/input/skimage-2d-tiff/" -i "image.tif" -l "segmentation.tif" -t "table.tsv" 
+
+### Test within python using a local MoBIE build
 
 1. mvn install current version (could be a SNAPSHOT)
 2. hardcode this version in `__init__.py`: e.g., 
@@ -30,7 +36,7 @@ Example for version `3.0.11`:
 
 #### mobie-viewer-fiji repo
 
-Within the mobie Java code change the version here:
+Within the mobie Java code change the versions here:
 ```java
 @CommandLine.Command(name = "mobie", mixinStandardHelpOptions = true, version = "3.0.11", description = "Visualise multi-modal big image data, see https://mobie.github.io/")
 ```
@@ -62,8 +68,8 @@ git commit -m "Version bump 3.0.10"
 mamba activate mobie-dev
 pip install -e .
 mobie --help
-export DATA="/Users/tischer/Documents/mobie/src/test/resources/input/mlj-2d-tiff"
-mobie -i "${DATA}/image.tif" -s "${DATA}/segmentation.tif" -t "${DATA}/table-mlj.csv"
+mobie project -p "https://github.com/mobie/platybrowser-project"
+mobie files -r "/Users/tischer/Documents/mobie/src/test/resources/input/skimage-2d-tiff/" -i "image.tif" -l "segmentation.tif" -t "table.tsv"
 ```
 
 ##### deploy
