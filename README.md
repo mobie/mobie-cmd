@@ -11,7 +11,7 @@ Download mamba-forge
 ### Create mobie-dev env
 
 ```
-mamba create -y -n mobie-dev -c conda-forge openjdk=8 jgo pip maven
+mamba create -y -n mobie-dev -c conda-forge openjdk=8 jgo pip maven blosc
 ```
 
 ### Test within Java on the command line
