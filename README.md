@@ -4,9 +4,13 @@
 
 Download mamba-forge
 
-### Manage pypi packages
+### Manage pypi package
 
-- https://pypi.org/
+- https://pypi.org/project/mobie/
+
+### Check versions on conda
+
+- https://anaconda.org/conda-forge/mobie
 
 ### Create mobie-dev env
 
@@ -30,15 +34,13 @@ continue as in [test locally](#test-locally)
 
 ### Release a new version
 
-This is not needed for local testing.
-
-Example for version `3.0.11`:
+Example for version `3.0.10`:
 
 #### mobie-viewer-fiji repo
 
-Within the mobie Java code change the versions here:
+Within the mobie Java code update the versions in all command line tools, e.g.:
 ```java
-@CommandLine.Command(name = "mobie", mixinStandardHelpOptions = true, version = "3.0.11", description = "Visualise multi-modal big image data, see https://mobie.github.io/")
+@CommandLine.Command(name = "mobie", mixinStandardHelpOptions = true, version = "3.0.10", description = "Visualise multi-modal big image data, see https://mobie.github.io/")
 ```
 
 Use the below lines to make a maven release:
@@ -62,7 +64,7 @@ git commit -m "Version bump 3.0.10"
 ```
 
 
-##### test locally
+#### test locally
 
 ```
 mamba activate mobie-dev
@@ -72,12 +74,18 @@ mobie project -p "https://github.com/mobie/platybrowser-project"
 mobie files -r "/Users/tischer/Documents/mobie/src/test/resources/input/skimage-2d-tiff/" -i "image.tif" -l "segmentation.tif" -t "table.tsv"
 ```
 
-##### deploy
+#### deploy to pypi
 
 ```
 git tag 3.0.10
 git push --tags
 ```
+
+Pushing a tag triggers build and deploy to pypi via github actions that are configured in the mobie-cmd repo.
+
+#### release on conda-forge
+
+deploying to pypi (s.a.) automatically triggers a PR in https://github.com/conda-forge/mobie-feedstock
 
 
 #### Troubleshooting

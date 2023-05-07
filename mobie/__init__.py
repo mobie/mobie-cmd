@@ -7,7 +7,7 @@ _picocli_autocomplete = "picocli.AutoComplete"
 _mobie_main_class = "org.embl.mobie.cmd.MoBIECmd"
 _groupId = "org.embl.mobie"
 _artifactId = "mobie-viewer-fiji"
-_artifactVersion = "3.2.0-SNAPSHOT"  # version("mobie")
+_artifactVersion = version("mobie")
 
 
 def launch_mobie(main_class, mobie_options):
