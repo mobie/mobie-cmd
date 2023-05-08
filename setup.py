@@ -10,7 +10,7 @@ entry_points = {
     ]
 }
 
-version = "4.0.2"
+version = "4.0.3"
 
 classifiers = [
     "License :: OSI Approved :: BSD License",
