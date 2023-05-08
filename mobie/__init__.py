@@ -33,4 +33,4 @@ def main():
 
     # subparsers don't specify any options, everything is passed to MoBiE
     args, unknown = p.parse_known_args()
-    args.func(mobie_options=unknown)
+    return args.func(mobie_options=unknown)
