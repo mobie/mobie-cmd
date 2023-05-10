@@ -57,12 +57,14 @@ git add .; git commit -m "prepare for release"; git push
 # * [new tag]mobie-viewer-fiji-3.0.10 -> mobie-viewer-fiji-3.0.10
 ```
 
-#### mobie-cmd repo
+#### mobie-cmd
 
 Within `mobie/__init.py__` ensure that
-`_artifactVersion = version("mobie")`   
+`_artifactVersion = version("mobie")`
 
 Within `setup.py` set `version` to `3.0.10`
+Note that you can set this version to a locally build snapshot, for local testing
+
 
 ```
 git add setup.py
@@ -93,6 +95,11 @@ git push --tags
 ```
 
 Pushing a tag triggers build and deploy to pypi via github actions that are configured in the mobie-cmd repo.
+
+##### check that it worked
+
+1. https://github.com/mobie/mobie-cmd/actions => did the deploy work?
+2. https://github.com/conda-forge/mobie-feedstock => did ?? work?
 
 #### release on conda-forge
 
