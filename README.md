@@ -20,11 +20,10 @@ mamba create -y -n mobie-dev -c conda-forge openjdk=8 jgo pip maven blosc
 
 ### Test within Java on the command line
 
-1. cd to the main folder of mobie-viewer-fiji
-2. ./install.sh
-3. ./mobie-files -r "/Users/tischer/Documents/mobie/src/test/resources/input/skimage-2d-tiff/" -i "image.tif" -l "segmentation.tif" -t "table.tsv" 
-4. ./mobie-hcs
-
+1. `cd mobie-viewer-fiji`
+2. `./install.sh`
+3. `./mobie-files -r "/Users/tischer/Documents/mobie/src/test/resources/input/skimage-2d-tiff/" -i "image.tif" -l "segmentation.tif" -t "table.tsv"` 
+4. `./mobie-hcs`
 
 ### Test within python using a local MoBIE build
 
