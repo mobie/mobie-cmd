@@ -1,0 +1,10 @@
+name:
+    mobie-cmd-dev
+channels:
+    - conda-forge
+dependencies:
+    - openjdk=8
+    - jgo
+    - pip
+    - maven
+    - blosc
