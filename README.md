@@ -29,7 +29,7 @@ mamba env create -f easybuild/easybuild_env.yaml
 
 1. mvn install current version (could be a SNAPSHOT)
 2. hardcode this version in `__init__.py`: e.g., 
-   `_artifactVersion         = '3.2.0-SNAPSHOT' #version("mobie")` 
+   `_artifactVersion         = '3.2.0-SNAPSHOT' #version("mobie_cmd")` 
    
 continue as in [test locally](#test-locally)
 

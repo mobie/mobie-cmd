@@ -3,6 +3,7 @@ name:
 channels:
     - conda-forge
 dependencies:
+    - mobie
     - openjdk=8
     - jgo
     - pip
