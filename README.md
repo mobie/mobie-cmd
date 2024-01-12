@@ -15,7 +15,7 @@ Download mamba-forge
 ### Create mobie-dev env
 
 ```
-mamba create -y -n mobie-cmd-dev -c conda-forge openjdk=8 jgo pip maven blosc
+mamba env create -f easybuild/easybuild_env.yaml
 ```
 
 ### Test within Java on the command line
