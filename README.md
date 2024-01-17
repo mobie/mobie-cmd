@@ -58,7 +58,7 @@ git add .; git commit -m "prepare for release"; git push
 
 #### mobie-cmd repo
 
-Within `mobie-cmd/__init.py__` ensure that
+Within `mobie_cmd/__init.py__` ensure that
 `_artifactVersion = version("mobie")`   
 
 Within `setup.py` set `version` to `3.0.10`
