@@ -6,7 +6,7 @@ install_requires = [
 
 entry_points = {
     "console_scripts": [
-        "mobie=mobie:main",
+        "mobie=mobie_cmd:main",
     ]
 }
 
@@ -22,7 +22,7 @@ package_urls = {
 }
 
 setup(
-    name="mobie",
+    name="mobie_cmd",
     version=version,
     license_files=("LICENSE.txt",),
     author="Christian Tischer",
@@ -32,7 +32,7 @@ setup(
     description="Viewer for big multi-modal image data",
     url="https://github.com/mobie/mobie-viewer-fiji",
     package_urls=package_urls,
-    packages=["mobie"],
+    packages=["mobie_cmd"],
     entry_points=entry_points,
     install_requires=install_requires,
     classifiers=classifiers,

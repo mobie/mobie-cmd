@@ -1,0 +1,41 @@
+# EasyBuild recipy for MoBIE
+# Author: Martin Schorb
+# EMBL
+
+easyblock = 'Conda'
+install_cmd = 'mamba'
+name = 'MoBIE_cmd'
+version = '0.4.5'
+
+homepage = 'https://mobie.github.io'
+description = """The MoBIE Fiji viewer is a Fiji plugin allowing easy exploration of big multi-modal images
+ and associated tabular data."""
+
+source_urls = ['https://raw.githubusercontent.com/mobie/mobie-cmd/eb/easybuild/easybuild_env.yaml']
+sources = ['easybuild_env.yaml']
+
+toolchain = SYSTEM
+
+builddependencies = [('Mamba', '4.14.0-0'),
+		     ('Maven', '3.8.6'),
+		     ('git', '2.41.0-GCCcore-12.3.0-nodocs'),
+		     ('Blosc', '1.21.3-GCCcore-11.3.0'),
+		     ('Java', '1.8.0_221')
+		    ]
+
+
+environment_file = 'easybuild_env.yaml'
+# environment_file = 'easybuild_env_%(version)s.yaml'
+
+postinstallcmds = ['eval "$(conda shell.bash hook)" &&'
+                   'conda activate .&&'
+                   'git clone https://github.com/mobie/mobie-viewer-fiji &&'
+                   'cd mobie-viewer-fiji &&'
+                   './install.sh'
+		  ]
+
+sanity_check_commands = ['mvn -v',
+			 'mobie -h'
+			]
+
+moduleclass = 'vis'

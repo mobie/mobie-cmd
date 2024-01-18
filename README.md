@@ -15,7 +15,7 @@ Download mamba-forge
 ### Create mobie-dev env
 
 ```
-mamba create -y -n mobie-dev -c conda-forge openjdk=8 jgo pip maven blosc
+mamba env create -f easybuild/easybuild_env.yaml
 ```
 
 ### Test within Java on the command line
@@ -29,7 +29,7 @@ mamba create -y -n mobie-dev -c conda-forge openjdk=8 jgo pip maven blosc
 
 1. mvn install current version (could be a SNAPSHOT)
 2. hardcode this version in `__init__.py`: e.g., 
-   `_artifactVersion         = '3.2.0-SNAPSHOT' #version("mobie")` 
+   `_artifactVersion         = '3.2.0-SNAPSHOT' #version("mobie_cmd")` 
    
 continue as in [test locally](#test-locally)
 
@@ -48,7 +48,7 @@ Within the mobie Java code update the versions in all command line tools, e.g.:
 Use the below lines to make a maven release:
 
 ```
-mamba activate mobie-dev # this activates java 8!
+mamba activate mobie-cmd-dev # this activates java 8!
 ./install.sh  # test the line of code suggested by the script!
 git add .; git commit -m "prepare for release"; git push
 ../scijava-scripts/release-version.sh --skip-version-check --skip-license-update
@@ -58,7 +58,7 @@ git add .; git commit -m "prepare for release"; git push
 
 #### mobie-cmd repo
 
-Within `mobie/__init.py__` ensure that
+Within `mobie_cmd/__init.py__` ensure that
 `_artifactVersion = version("mobie")`   
 
 Within `setup.py` set `version` to `3.0.10`
@@ -75,7 +75,7 @@ TODO: add test data for mobie hcs
 TODO: add test data for mobie table
 
 ```
-mamba activate mobie-dev
+mamba activate mobie-cmd-dev
 pip install -e .
 mobie --help
 mobie project -p "https://github.com/mobie/platybrowser-project"

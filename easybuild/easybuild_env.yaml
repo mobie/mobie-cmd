@@ -1,0 +1,8 @@
+name:
+    mobie-cmd-dev
+channels:
+    - conda-forge
+dependencies:
+    - mobie
+    - jgo
+    - pip
